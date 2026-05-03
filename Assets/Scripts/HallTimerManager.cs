@@ -30,7 +30,7 @@ public class HallTimerManager : MonoBehaviour
                 {
                     yield return null;
                     GlobalVariables.ElectricityDuration -= Time.deltaTime;
-                    GlobalVariables.CurrentElectricitySliderValue += (200/15f) * Time.deltaTime;
+                    GlobalVariables.CurrentElectricitySliderValue += (200/GlobalVariables.ElectricityDuration) * Time.deltaTime;
                 }
                 GlobalVariables.HasPaidElectricity = false;
                 GlobalVariables.CurrentElectricityState = false;

@@ -13,8 +13,8 @@ public class BillManager : MonoBehaviour
         {
             HallTimerManager.Instance.StopCoroutine(GlobalVariables.ElectricityCoroutine);
         }
+        GlobalVariables.ElectricityDuration += 15f;
         GlobalVariables.CurrentElectricitySliderValue = 0;
-        GlobalVariables.ElectricityDuration += 5f;
         GlobalVariables.Money -= 200;
         moneyText.text = GlobalVariables.Money.ToString();
         GlobalVariables.ElectricityCoroutine = HallTimerManager.Instance.StartCoroutine(HallTimerManager.Instance.ElectricityTimer(true));
