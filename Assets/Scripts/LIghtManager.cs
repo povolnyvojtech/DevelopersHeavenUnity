@@ -11,7 +11,7 @@ public class LightManager : MonoBehaviour
 
     private void Awake()
     {
-        if (Instance == null)
+        if (!Instance)
         {
             Instance = this;
         }
@@ -30,9 +30,9 @@ public class LightManager : MonoBehaviour
 
     public void TurnPowerOff()
     {
+        GlobalVariables.CurrentElectricityState = false;
         globalLight.intensity = 0.02f;
         playerLight.enabled = true;
-        GlobalVariables.CurrentElectricityState = false;
     }
 
     public void TurnPowerOn()
@@ -46,6 +46,6 @@ public class LightManager : MonoBehaviour
         }
         globalLight.intensity = 1f;
         playerLight.enabled = false;
-        HallTimerManager.Instance.StartCoroutine(HallTimerManager.Instance.ElectricityTimer(false));
+        GlobalVariables.ElectricityCoroutine ??= HallTimerManager.Instance.StartCoroutine(HallTimerManager.Instance.ElectricityTimer(false));
     }
 }

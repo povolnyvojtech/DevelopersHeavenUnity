@@ -45,7 +45,7 @@ public class SwitchChooseXDesktop : MonoBehaviour
     private void OnTriggerExit2D(Collider2D other)
     {
         if (!interactionButton) return;
-        if (!GlobalVariables.HasPaidElectricity)
+        if (!GlobalVariables.CurrentElectricityState)
         {
             electricityOffText.SetActive(false);
             _isPlayerInRange = false;

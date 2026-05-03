@@ -42,9 +42,8 @@ public class HallTimerManager : MonoBehaviour
             }
             case false:
             {
-                yield return new WaitForSeconds(5f);
-                LightManager.Instance.TurnPowerOff();
                 yield return new WaitUntil(() => SceneManager.GetActiveScene().name == "Desktop");
+                yield return new WaitForSeconds(5f);
                 if (!GlobalVariables.HasPaidElectricity)
                 {
                     SceneManager.LoadScene("Bedroom");
@@ -55,5 +54,6 @@ public class HallTimerManager : MonoBehaviour
                 break;
             }
         }
+        GlobalVariables.ElectricityCoroutine = null;
     }
 }

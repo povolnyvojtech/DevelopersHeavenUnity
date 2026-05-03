@@ -24,32 +24,23 @@ public class TriggerScript : MonoBehaviour
         if (_isPlayerInRange && !locked && Input.GetKeyDown(KeyCode.E))    
         {
             if (powerSwitch)
-            {
-                if(GlobalVariables.HasPaidElectricity)
+            { 
+                switch (GlobalVariables.CurrentElectricityState)
                 {
-                    switch (GlobalVariables.CurrentElectricityState)
+                    case true:
                     {
-                        case true:
-                        {
-                            powerSwitchOn.SetActive(false);
-                            powerSwitchOff.SetActive(true);
-                            LightManager.Instance.TurnPowerOff();
-                            break;
-                        }
-                        case false:
-                        {
-                            powerSwitchOn.SetActive(true);
-                            powerSwitchOff.SetActive(false);
-                            LightManager.Instance.TurnPowerOn();
-                            break;
-                        }
+                        powerSwitchOn.SetActive(false);
+                        powerSwitchOff.SetActive(true);
+                        LightManager.Instance.TurnPowerOff();
+                        break;
                     }
-                }
-                else
-                {
-                    powerSwitchOn.SetActive(true);
-                    powerSwitchOff.SetActive(false);
-                    LightManager.Instance.TurnPowerOn();
+                    case false:
+                    {
+                        powerSwitchOn.SetActive(true);
+                        powerSwitchOff.SetActive(false);
+                        LightManager.Instance.TurnPowerOn();
+                        break;
+                    }
                 }
 
                 return;

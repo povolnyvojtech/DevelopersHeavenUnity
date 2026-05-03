@@ -26070,7 +26070,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 693730144}
         m_TargetAssemblyTypeName: BillManager, Assembly-CSharp
-        m_MethodName: RestartElectricityCoroutine
+        m_MethodName: RestartElectricityTimer
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
