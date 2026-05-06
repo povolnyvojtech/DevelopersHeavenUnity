@@ -65,7 +65,8 @@ public class GlobalVariables : MonoBehaviour
     public static int CurrentBlackJackBet = 10;
     
     //bills
-    public static float ElectricityDuration = 15f;
+    public static float CurrentElectricityDuration = 180f;
+    public static float ElectricityTimerDuration = 180f;
     public static bool HasPaidElectricity = true; //true - eletkrika jede, false - elektrika nejede
     public static bool CurrentElectricityState = true;
     public static Coroutine ElectricityCoroutine;

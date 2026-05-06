@@ -26,11 +26,12 @@ public class HallTimerManager : MonoBehaviour
         {
             case true:
             {
-                while (GlobalVariables.ElectricityDuration > 0)
+                while (GlobalVariables.CurrentElectricityDuration > 0)
                 {
                     yield return null;
-                    GlobalVariables.ElectricityDuration -= Time.deltaTime;
-                    GlobalVariables.CurrentElectricitySliderValue += (200/GlobalVariables.ElectricityDuration) * Time.deltaTime;
+                    GlobalVariables.CurrentElectricityDuration -= Time.deltaTime;
+                    GlobalVariables.CurrentElectricitySliderValue += (200/GlobalVariables.ElectricityTimerDuration) * Time.deltaTime;
+                    Debug.Log(GlobalVariables.CurrentElectricityDuration + " " + GlobalVariables.CurrentElectricitySliderValue);
                 }
                 GlobalVariables.HasPaidElectricity = false;
                 GlobalVariables.CurrentElectricityState = false;

@@ -132,7 +132,7 @@ public class TimerManagerScript : MonoBehaviour
 
     public static IEnumerator InboxMessageDestroyTimer(Transform inboxContent)
     {
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(10f);
         foreach (Transform message in inboxContent)
         {
             Destroy(message.gameObject);
