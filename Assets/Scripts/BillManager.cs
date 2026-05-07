@@ -29,7 +29,7 @@ public class BillManager : MonoBehaviour
         {
             HallTimerManager.Instance.StopCoroutine(GlobalVariables.RentCoroutine);
         }
-        GlobalVariables.RentTimerDuration = 15f+GlobalVariables.CurrentRentDuration;
+        GlobalVariables.RentTimerDuration = 360f+GlobalVariables.CurrentRentDuration;
         GlobalVariables.CurrentRentDuration = GlobalVariables.RentTimerDuration;
         GlobalVariables.CurrentRentSliderValue = 0;
         GlobalVariables.Money -= 1200;

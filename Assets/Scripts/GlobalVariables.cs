@@ -73,8 +73,8 @@ public class GlobalVariables : MonoBehaviour
     public static Coroutine ElectricityCoroutine;
     
     public static Coroutine RentCoroutine;
-    public static float CurrentRentDuration = 15f;
-    public static float RentTimerDuration = 15f;
+    public static float CurrentRentDuration = 360f;
+    public static float RentTimerDuration = 360f;
     public static float CurrentRentSliderValue;
 
 
@@ -174,8 +174,8 @@ public class GlobalVariables : MonoBehaviour
         if (RentCoroutine != null) HallTimerManager.Instance.StopCoroutine(RentCoroutine);
         DatingHasRegistered = false;
         RentCoroutine = null;
-        RentTimerDuration = 15f;
-        CurrentRentDuration = 15f;
+        RentTimerDuration = 360f;
+        CurrentRentDuration = 360f;
         CurrentRentSliderValue = 0f;
         ElectricityCoroutine = null;
         ElectricityTimerDuration = 180f;
