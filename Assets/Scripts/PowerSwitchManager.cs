@@ -8,6 +8,12 @@ public class PowerSwitchManager : MonoBehaviour
 
     private void Start()
     {
+        if (GlobalVariables.NewGame)
+        {
+            GlobalVariables.ElectricityCoroutine = HallTimerManager.Instance.StartCoroutine(HallTimerManager.Instance.ElectricityTimer(true));
+            GlobalVariables.RentCoroutine = HallTimerManager.Instance.StartCoroutine(HallTimerManager.Instance.RentTimer());
+            GlobalVariables.NewGame = false;
+        }
         if (GlobalVariables.CurrentElectricityState)
         {
             powerSwitchOn.SetActive(true);

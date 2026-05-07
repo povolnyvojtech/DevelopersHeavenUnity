@@ -76,6 +76,8 @@ public class GlobalVariables : MonoBehaviour
     public static float CurrentRentDuration = 360f;
     public static float RentTimerDuration = 360f;
     public static float CurrentRentSliderValue;
+    
+    public static bool NewGame;
 
 
     public static void CalculateChanceToGetGirls()
@@ -183,19 +185,6 @@ public class GlobalVariables : MonoBehaviour
         CurrentElectricitySliderValue = 0f;
         HasPaidElectricity = true;
         CurrentElectricityState = true;
-        
-        
-        
-        
-        
-        
-        
-        //TODO: spustit znovu korutiny
-        
-        
-        
-        
-        
-        
+        NewGame = true;
     }
 }
