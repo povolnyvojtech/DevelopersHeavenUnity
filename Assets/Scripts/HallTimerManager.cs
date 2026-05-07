@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -21,6 +22,7 @@ public class HallTimerManager : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
     public IEnumerator ElectricityTimer(bool type) //true - hasPaidElectricity, false - electricity if off
     {
         switch (type)
