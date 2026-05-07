@@ -14,6 +14,7 @@ public class HallTimerManager : MonoBehaviour
             Instance = this;
             DontDestroyOnLoad(gameObject);
             GlobalVariables.ElectricityCoroutine = StartCoroutine(ElectricityTimer(true));
+            GlobalVariables.RentCoroutine = StartCoroutine(RentTimer());
         }
         else
         {
@@ -31,7 +32,6 @@ public class HallTimerManager : MonoBehaviour
                     yield return null;
                     GlobalVariables.CurrentElectricityDuration -= Time.deltaTime;
                     GlobalVariables.CurrentElectricitySliderValue += (200/GlobalVariables.ElectricityTimerDuration) * Time.deltaTime;
-                    Debug.Log(GlobalVariables.CurrentElectricityDuration + " " + GlobalVariables.CurrentElectricitySliderValue);
                 }
                 GlobalVariables.HasPaidElectricity = false;
                 GlobalVariables.CurrentElectricityState = false;
@@ -56,5 +56,17 @@ public class HallTimerManager : MonoBehaviour
             }
         }
         GlobalVariables.ElectricityCoroutine = null;
+    }
+
+    public IEnumerator RentTimer()
+    {
+        while (GlobalVariables.CurrentRentDuration > 0)
+        {
+            yield return null;
+            GlobalVariables.CurrentRentDuration -= Time.deltaTime;
+            GlobalVariables.CurrentRentSliderValue += (200/GlobalVariables.RentTimerDuration) * Time.deltaTime;
+        }
+        GlobalVariables.RestartGame();
+        SceneManager.LoadScene("GameOver");
     }
 }

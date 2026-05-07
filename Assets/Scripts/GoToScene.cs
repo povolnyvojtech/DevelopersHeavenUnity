@@ -1,15 +1,20 @@
 using System;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class BackToHall : MonoBehaviour
 {
-    public string targetScene;
-    private void Update()
+    public Button button;
+
+    private void Start()
     {
-        if (Input.GetKey(KeyCode.Escape))
-        {
-            SceneManager.LoadScene(targetScene);
-        }
+        button.onClick.AddListener(ChangeScene);
+    }
+
+    private void ChangeScene()
+    {
+        SceneManager.LoadScene("MainMenu");   
     }
 }

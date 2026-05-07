@@ -21,4 +21,19 @@ public class BillManager : MonoBehaviour
         moneyText.text = GlobalVariables.Money.ToString();
         GlobalVariables.ElectricityCoroutine = HallTimerManager.Instance.StartCoroutine(HallTimerManager.Instance.ElectricityTimer(true));
     }
+
+    public void RestartRentTimer()
+    {
+        if (GlobalVariables.Money - 200 < 0) return;
+        if (GlobalVariables.RentCoroutine != null)
+        {
+            HallTimerManager.Instance.StopCoroutine(GlobalVariables.RentCoroutine);
+        }
+        GlobalVariables.RentTimerDuration = 15f+GlobalVariables.CurrentRentDuration;
+        GlobalVariables.CurrentRentDuration = GlobalVariables.RentTimerDuration;
+        GlobalVariables.CurrentRentSliderValue = 0;
+        GlobalVariables.Money -= 1200;
+        moneyText.text = GlobalVariables.Money.ToString();
+        GlobalVariables.RentCoroutine = HallTimerManager.Instance.StartCoroutine(HallTimerManager.Instance.RentTimer());
+    }
 }

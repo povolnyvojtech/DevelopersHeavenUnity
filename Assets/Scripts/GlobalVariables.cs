@@ -69,8 +69,12 @@ public class GlobalVariables : MonoBehaviour
     public static float ElectricityTimerDuration = 180f;
     public static bool HasPaidElectricity = true; //true - eletkrika jede, false - elektrika nejede
     public static bool CurrentElectricityState = true;
-    public static Coroutine ElectricityCoroutine;
     public static float CurrentElectricitySliderValue;
+    public static Coroutine ElectricityCoroutine;
+    
+    public static Coroutine RentCoroutine;
+    public static float CurrentRentDuration = 15f;
+    public static float RentTimerDuration = 15f;
     public static float CurrentRentSliderValue;
 
 
@@ -142,5 +146,56 @@ public class GlobalVariables : MonoBehaviour
         {
             timeTillReset.text =  type == 0 ? "Reset in: " + seconds + " seconds" : "Remaining: " + seconds + " seconds";
         }
+    }
+    
+    public static void RestartGame()
+    {
+        HallBgLevel = 0;
+        CurrentHallBgUpgradeCost = 600;
+        BedroomBgLevel = 0;
+        CurrentBedroomBgUpgradeCost = 500;
+        QualityLevel = 1;
+        QualityMultiplier = 1f;
+        SpeedLevel = 1;
+        SpeedMultiplier = 1f;
+        QualityPractisingTime = 20;
+        SpeedPractisingTime = 20;
+        HasCareer = false;
+        CareerPath = "";
+        Money = 500;
+        Level = 1;
+        Xp = 0;
+        GymLevel = 1;
+        OverallLook = 1;
+        ChanceToGetHoes = 0f;
+        DatingName = "";
+        DatingSurname = "";
+        if (ElectricityCoroutine != null) HallTimerManager.Instance.StopCoroutine(ElectricityCoroutine);
+        if (RentCoroutine != null) HallTimerManager.Instance.StopCoroutine(RentCoroutine);
+        DatingHasRegistered = false;
+        RentCoroutine = null;
+        RentTimerDuration = 15f;
+        CurrentRentDuration = 15f;
+        CurrentRentSliderValue = 0f;
+        ElectricityCoroutine = null;
+        ElectricityTimerDuration = 180f;
+        CurrentElectricityDuration = 180f;
+        CurrentElectricitySliderValue = 0f;
+        HasPaidElectricity = true;
+        CurrentElectricityState = true;
+        
+        
+        
+        
+        
+        
+        
+        //TODO: spustit znovu korutiny
+        
+        
+        
+        
+        
+        
     }
 }

@@ -7853,7 +7853,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: ELECTRICITY
+  m_text: RENT
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -11823,6 +11823,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 278118268}
     m_Modifications:
+    - target: {fileID: 5200340132328069243, guid: 6229356ca76a22c4abf7cb69a5b0b869, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5200340132328069243, guid: 6229356ca76a22c4abf7cb69a5b0b869, type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5200340132328069243, guid: 6229356ca76a22c4abf7cb69a5b0b869, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8085749752293921610, guid: 6229356ca76a22c4abf7cb69a5b0b869, type: 3}
       propertyPath: m_Name
       value: RentTimer
@@ -20627,7 +20639,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1457314511}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 693730140}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1457314511
 MonoBehaviour:
   m_ObjectHideFlags: 0

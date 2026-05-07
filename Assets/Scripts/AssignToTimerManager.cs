@@ -43,7 +43,11 @@ public class AssignToTimerManager : MonoBehaviour
             }
             case 1:
             {
-                if (!rentTimerImage || GlobalVariables.ActiveScene != "Desktop") return;
+                if (!rentTimerImage) return;
+                if (GlobalVariables.CurrentRentSliderValue >= 200f)
+                {
+                    rentTimerImage.GetComponent<RectTransform>().sizeDelta = new Vector2(200, 30);    
+                }
                 rentTimerImage.GetComponent<RectTransform>().sizeDelta = new Vector2(GlobalVariables.CurrentRentSliderValue, 30);
                 break;
             }
