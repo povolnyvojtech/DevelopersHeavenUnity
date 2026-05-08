@@ -7,14 +7,15 @@ using UnityEngine.UI;
 public class TooltipDisplayer : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
     public string buttonStatsText;
-    public TextMeshProUGUI buttonText;
     public int buttonType; //gym, vzhled, invest money, rizz ..... TODO dodělat další vlastnosti
     public float value;
-    private int _state = 0; //0 - zamceny, 1 - nesplněný, 2 - hotový
+    private int _state; //0 - zamceny, 1 - nesplněný, 2 - hotový
     public bool firstButton;
     public bool lastButton;
     public TooltipDisplayer previousButton;
     public TooltipDisplayer nextButton;
+    public Image currentButtonImage;
+    public Sprite[] sprites;
 
     private void Start()
     {
@@ -22,48 +23,37 @@ public class TooltipDisplayer : MonoBehaviour, IPointerEnterHandler, IPointerExi
         {
             _state = 1;
         }
-        ChangeText();
+        ChangeSprite();
     }
     
     public void UnlockNext()
     {
-        if (previousButton == null || previousButton._state != 2) return;
+        if (!previousButton || previousButton._state != 2) return;
         if (lastButton && _state != 2)
         {
             _state = 1;
-            ChangeText();
+            ChangeSprite();
             return;
         }
         _state = nextButton._state != 0 ? 2 : 1;
-        ChangeText();
+        ChangeSprite();
     }
     
     public void ChangeState()
     {
-        if ((previousButton == null || previousButton._state != 2) && !firstButton ) return;
-        if (firstButton)
-        {   
-            _state = Math.Clamp(++_state, 0, 2);
-            ChangeText();    
-        }
+        if ((!previousButton || previousButton._state != 2) && !firstButton ) return;
         _state = Math.Clamp(++_state, 0, 2);
-        ChangeText();
+        ChangeSprite();
     }
 
-    private void ChangeText()
+    private void ChangeSprite()
     {
-        buttonText.text = _state switch
-        {
-            0 => "Locked",
-            1 => "Do",
-            2 => "Done",
-            _ => "failed"
-        };
+        currentButtonImage.sprite = sprites[_state];
     }
     public void UpgradeSkill()
     {
         if (_state == 0) return;
-        switch (buttonType) //zatím 0 - gym = float od 0 do 100 TODO reprezentace v baru, 1 - vzhled TODO nějakou globální proměnnou pro vzhled
+        switch (buttonType)
         {
             case 0:
             {
