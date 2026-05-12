@@ -46,7 +46,7 @@ public class HallTimerManager : MonoBehaviour
             case false:
             {
                 yield return new WaitUntil(() => SceneManager.GetActiveScene().name == "Desktop");
-                yield return new WaitForSeconds(5f);
+                yield return new WaitForSeconds(15f);
                 if (!GlobalVariables.HasPaidElectricity)
                 {
                     SceneManager.LoadScene("Bedroom");
