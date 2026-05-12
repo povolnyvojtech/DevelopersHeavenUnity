@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -6,9 +7,12 @@ using Random = UnityEngine.Random;
 
 public class DoJob : MonoBehaviour
 {
-    public Image[] images;
+    public GameObject imagePrefab;
+    public Transform canvasTransform;
     public Sprite[] sprites;
-    private List<int> _directions = new List<int>();
+    private readonly List<string> _keyStringsList = new(){"A", "B", "C"};
+    private int _currentDirection; //0 - left, 1 - down, 2 - up, 3 - right
+    private string _currentKey;
 
     private void Start()
     {
@@ -16,11 +20,29 @@ public class DoJob : MonoBehaviour
     }
 
 
-    public void GenerateImages()
+    private void GenerateImages()
     {
-        foreach (Image img in images)
+        GameObject newImageObj = Instantiate(imagePrefab, canvasTransform);
+        Image imageComponent = newImageObj.GetComponent<Image>();
+        
+        Vector3 imgPos = new Vector3(Random.Range(-810, 810), Random.Range(-390,390), 1);
+        _currentDirection = Random.Range(0, 4);
+        _currentKey = _keyStringsList[Random.Range(0, 3)];
+        
+        imageComponent.sprite = sprites[_currentDirection];
+        newImageObj.transform.localPosition = imgPos;
+        
+        StartCoroutine(DestroyImage(newImageObj));
+        Debug.Log(imgPos);
+    }
+    
+    private static IEnumerator DestroyImage(GameObject img)
+    {
+        yield return new WaitForSeconds(2f);
+        if (img)
         {
-            img.sprite = sprites[Random.Range(0, sprites.Length)];
+            Destroy(img.gameObject);
+            Debug.Log("Job failed");
         }
     }
 }
