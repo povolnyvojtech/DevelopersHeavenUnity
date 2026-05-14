@@ -45,17 +45,6 @@ public class JobManager : MonoBehaviour
         }
     }
 
-    public void StartContract(int jobTime, int jobMoney, int jobXp)
-    {
-        if (GlobalVariables.HasJob) return;
-        GlobalVariables.HasJob = true;
-        GlobalVariables.CurrentJobMoney = jobMoney;
-        GlobalVariables.CurrentJobTime = jobTime;
-        Debug.Log(GlobalVariables.CurrentJobTime);
-        Debug.Log(GlobalVariables.SpeedMultiplier);
-        //TimerManagerScript.Instance.StartCoroutine(TimerManagerScript.CurrentJobTimer(jobTime, jobMoney, jobXp));
-    }
-
     public void RefreshUI()
     {
         GlobalVariables.UpdateStats(levelText, xpText, moneyText);

@@ -43,7 +43,8 @@ public class GlobalVariables : MonoBehaviour
     public static Job CurrentJob;
     public static GameObject JobGameObject;
     public static int CurrentJobMoney;
-    public static int CurrentJobTime;
+    public static int CurrentJobTime = 5;
+    public static int CurrentJobXp;
     public static float CurrentJobTimerSliderValue;
     public static float CurrentPracticeTimerSliderValue;
     
@@ -79,6 +80,9 @@ public class GlobalVariables : MonoBehaviour
     public static float CurrentRentSliderValue;
     
     public static bool NewGame;
+    
+    //DoJob
+    public static int NumberOfButtons = 0;
 
 
     public static void CalculateChanceToGetGirls()

@@ -56,7 +56,7 @@ public class ActivateJob : MonoBehaviour
         buttonText.GetComponent<TextMeshProUGUI>().color = Color.red;
         Destroy(GlobalVariables.JobGameObject);
         DisplayContractInfo.Instance.ClearJobInfo();
-        JobManager.Instance.StartContract(GlobalVariables.CurrentJob.JobTime, GlobalVariables.CurrentJob.JobMoney, GlobalVariables.CurrentJob.JobXp);
+        DoJob.StartContract(GlobalVariables.CurrentJob.JobTime, GlobalVariables.CurrentJob.JobMoney, GlobalVariables.CurrentJob.JobXp);
         doJobCanvas.SetActive(true);
     }
 }

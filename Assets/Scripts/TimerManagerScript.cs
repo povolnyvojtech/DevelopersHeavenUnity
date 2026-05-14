@@ -55,35 +55,13 @@ public class TimerManagerScript : MonoBehaviour
         }
     }
 
-    public static IEnumerator CurrentJobTimer(int jobTime, int jobMoney, int jobXp)
+    public static void FinishJob()
     {
-        JobTimerImageBg.SetActive(true);
-        float totalToGrow = 200f;
-        float duration = jobTime;
-        float growthPerSecond = totalToGrow / duration;
-        CurrentJobTimeLeft = jobTime * GlobalVariables.SpeedMultiplier;
-        
-        while (CurrentJobTimeLeft > 0)
-        {
-            yield return null;
-            CurrentJobTimeLeft -= Time.deltaTime;
-            GlobalVariables.CurrentJobTimerSliderValue += growthPerSecond * Time.deltaTime;
-
-            if (!JobTimerImageBg || !JobTimerImageFg || !JobRt) continue;
-            
-            if (GlobalVariables.HasJob && GlobalVariables.ActiveScene == "Desktop")
-            {
-                JobTimerImageBg.SetActive(true);
-                JobRt.sizeDelta = new Vector2(GlobalVariables.CurrentJobTimerSliderValue, 30);
-            }
-        }
-        
         GlobalVariables.HasJob = false;
         JobFinished?.Invoke();
-        JobTimerImageBg.SetActive(false);
-        GlobalVariables.CurrentJobTimerSliderValue = 0;
-        GlobalVariables.Money += (int)Mathf.Round(jobMoney * GlobalVariables.QualityMultiplier);
-        GlobalVariables.Xp += jobXp;
+        Debug.Log("Job finished, invoked");
+        GlobalVariables.Money += (int)Mathf.Round(GlobalVariables.CurrentJobMoney * GlobalVariables.QualityMultiplier);
+        GlobalVariables.Xp += GlobalVariables.CurrentJobXp;
         GlobalVariables.LevelUp();
         
         if (JobManager.Instance)

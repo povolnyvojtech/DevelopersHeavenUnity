@@ -62,7 +62,7 @@ public class JobGenerator : MonoBehaviour
                 };
                 if (_jobType != null)
                 {
-                    int time = Random.Range(1, 100); // v hodinach
+                    int time = Random.Range(10, 100); // v hodinach
                     int money = time * GlobalVariables.HourRate;
                     int xp = time * 3; //3 je random konstanta na násobení času k získání xp TODO
                     

@@ -2396,6 +2396,8 @@ MonoBehaviour:
   - {fileID: -5527580962945181715, guid: 4af8e407f2aebb34b945e0955977cd6a, type: 3}
   - {fileID: 4386953514970804178, guid: 359bf7fc70320b74596cadc8ae32cfd9, type: 3}
   - {fileID: 1035271773707093762, guid: 87ff6ab86e157e84ba8df1c328b37ae2, type: 3}
+  doJobCanvas: {fileID: 152215065}
+  counterDisplayerText: {fileID: 2000497366}
 --- !u!114 &152215067
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21716,7 +21718,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8495435882106455580, guid: 6229356ca76a22c4abf7cb69a5b0b869, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -14400
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8495435882106455580, guid: 6229356ca76a22c4abf7cb69a5b0b869, type: 3}
       propertyPath: m_LocalRotation.w
@@ -25082,7 +25084,7 @@ GameObject:
   - component: {fileID: 2000497367}
   - component: {fileID: 2000497366}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: CounterDisplayerText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -25104,8 +25106,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 466}
-  m_SizeDelta: {x: 673.39, y: 54.83}
+  m_AnchoredPosition: {x: -857.33, y: 419.17}
+  m_SizeDelta: {x: 126.72, y: 70.49}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2000497366
 MonoBehaviour:
@@ -25127,7 +25129,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "tady bude timer a kdy\u017E vyp\u0161\xED -> job failed"
+  m_text: 0/67
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -25154,15 +25156,15 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 50
+  m_fontSizeBase: 50
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_characterHorizontalScale: 1

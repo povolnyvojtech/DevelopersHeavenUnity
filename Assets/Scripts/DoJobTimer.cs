@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using Microsoft.Unity.VisualStudio.Editor;
 using UnityEngine;
@@ -8,7 +9,6 @@ public class DoJobTimer : MonoBehaviour
 
     public Image jobImage;
     private RectTransform _jobRt;
-    private float _currentSliderValue;
     
     private void OnEnable()
     {
@@ -18,10 +18,8 @@ public class DoJobTimer : MonoBehaviour
 
     private static IEnumerator JobTimer(RectTransform rt)
     {
-        Debug.Log("Coroutine has started");
-        float totalToGrow = 1080f;
+        float totalToGrow = 1920f;
         float duration = GlobalVariables.CurrentJobTime*GlobalVariables.SpeedMultiplier;
-        Debug.Log(duration);
         float growthPerSecond = totalToGrow / duration;
         float currentJobTimeLeft = duration * GlobalVariables.SpeedMultiplier;
         
@@ -31,7 +29,8 @@ public class DoJobTimer : MonoBehaviour
             currentJobTimeLeft -= Time.deltaTime;
             GlobalVariables.CurrentJobTimerSliderValue += growthPerSecond * Time.deltaTime;
             
-            rt.sizeDelta = new Vector2(GlobalVariables.CurrentJobTimerSliderValue, 30);
+            rt.sizeDelta = new Vector2(GlobalVariables.CurrentJobTimerSliderValue, 50);
         }
+        TimerManagerScript.FinishJob();
     }
 }
