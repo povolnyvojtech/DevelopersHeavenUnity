@@ -12,4 +12,9 @@ public class Job
         JobMoney = money;
         JobXp = xp;
     }
+
+    public override string ToString()
+    {
+        return "Time: " + JobTime + " Money: " + JobMoney + " XP: " + JobXp;
+    }
 }

@@ -55,14 +55,16 @@ public class TimerManagerScript : MonoBehaviour
         }
     }
 
-    public static void FinishJob()
+    public static void FinishJob(bool type) //true - dokončil šipky, false - vypršel čas
     {
         GlobalVariables.HasJob = false;
         JobFinished?.Invoke();
-        Debug.Log("Job finished, invoked");
-        GlobalVariables.Money += (int)Mathf.Round(GlobalVariables.CurrentJobMoney * GlobalVariables.QualityMultiplier);
-        GlobalVariables.Xp += GlobalVariables.CurrentJobXp;
-        GlobalVariables.LevelUp();
+        if (type)
+        {
+            GlobalVariables.Money += (int)Mathf.Round(GlobalVariables.CurrentJobMoney * GlobalVariables.QualityMultiplier);
+            GlobalVariables.Xp += GlobalVariables.CurrentJobXp;
+            GlobalVariables.LevelUp();
+        }
         
         if (JobManager.Instance)
         {

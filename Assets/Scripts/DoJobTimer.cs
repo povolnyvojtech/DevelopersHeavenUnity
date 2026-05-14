@@ -1,6 +1,5 @@
 using System;
 using System.Collections;
-using Microsoft.Unity.VisualStudio.Editor;
 using UnityEngine;
 using Image = UnityEngine.UI.Image;
 
@@ -31,6 +30,6 @@ public class DoJobTimer : MonoBehaviour
             
             rt.sizeDelta = new Vector2(GlobalVariables.CurrentJobTimerSliderValue, 50);
         }
-        TimerManagerScript.FinishJob();
+        TimerManagerScript.FinishJob(false);
     }
 }

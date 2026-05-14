@@ -54,9 +54,9 @@ public class ActivateJob : MonoBehaviour
         if (GlobalVariables.HasJob) return;
         buttonText.text = "Ongoing job";
         buttonText.GetComponent<TextMeshProUGUI>().color = Color.red;
+        DoJob.StartContract(GlobalVariables.CurrentJob.JobTime, GlobalVariables.CurrentJob.JobMoney, GlobalVariables.CurrentJob.JobXp);
         Destroy(GlobalVariables.JobGameObject);
         DisplayContractInfo.Instance.ClearJobInfo();
-        DoJob.StartContract(GlobalVariables.CurrentJob.JobTime, GlobalVariables.CurrentJob.JobMoney, GlobalVariables.CurrentJob.JobXp);
         doJobCanvas.SetActive(true);
     }
 }

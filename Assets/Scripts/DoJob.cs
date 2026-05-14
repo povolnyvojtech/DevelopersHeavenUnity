@@ -70,25 +70,30 @@ public class DoJob : MonoBehaviour
     }
     private static void DetermineNumberOfButtons()
     {
-        if (10 <= GlobalVariables.CurrentJobTime && GlobalVariables.CurrentJobTime <= 20)
+        Debug.Log(GlobalVariables.CurrentJobTime);
+        if (GlobalVariables.CurrentJobTime >= 10 && GlobalVariables.CurrentJobTime <= 20)
         {
             GlobalVariables.NumberOfButtons = 10;
         }
-        else if (30 <= GlobalVariables.CurrentJobTime && GlobalVariables.CurrentJobTime <= 40)
+        else if (GlobalVariables.CurrentJobTime >= 30 && GlobalVariables.CurrentJobTime <= 40)
         {
             GlobalVariables.NumberOfButtons = 15;
         }
-        else if (50 <= GlobalVariables.CurrentJobTime && GlobalVariables.CurrentJobTime <= 60)
+        else if (GlobalVariables.CurrentJobTime >= 50 && GlobalVariables.CurrentJobTime <= 60)
         {
             GlobalVariables.NumberOfButtons = 20;
         }
-        else if (70 <= GlobalVariables.CurrentJobTime && GlobalVariables.CurrentJobTime <= 80)
+        else if (GlobalVariables.CurrentJobTime >= 70 && GlobalVariables.CurrentJobTime <= 80)
         {
             GlobalVariables.NumberOfButtons = 25;
         }
-        else if (90 <= GlobalVariables.CurrentJobTime && GlobalVariables.CurrentJobTime <= 100)
+        else if (GlobalVariables.CurrentJobTime >= 90 && GlobalVariables.CurrentJobTime <= 100)
         {
             GlobalVariables.NumberOfButtons = 30;
+        }
+        else
+        {
+            GlobalVariables.NumberOfButtons = 100;
         }
     }
     
@@ -105,17 +110,14 @@ public class DoJob : MonoBehaviour
 
     private void GenerateNextImage()
     {
-        if (_currentCount > GlobalVariables.NumberOfButtons)
+        if (_currentCount == GlobalVariables.NumberOfButtons)
         {
-            TimerManagerScript.FinishJob();
+            TimerManagerScript.FinishJob(true);
             doJobCanvas.SetActive(false);
             GlobalVariables.CurrentJobTimerSliderValue = 0;
             _currentCount = 0;
             return;
         }
-
-        Debug.Log(GlobalVariables.NumberOfButtons);
-        Debug.Log(_currentCount);
         GameObject newImageObj = Instantiate(imagePrefab, canvasTransform);
         Image imageComponent = newImageObj.GetComponent<Image>();
         TextMeshProUGUI keyText = newImageObj.GetComponentInChildren<TextMeshProUGUI>();
