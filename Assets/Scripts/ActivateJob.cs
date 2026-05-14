@@ -6,9 +6,12 @@ using UnityEngine.UI;
 public class ActivateJob : MonoBehaviour
 {
     public TextMeshProUGUI buttonText;
+    public Button button;
+    public GameObject doJobCanvas;
 
     private void Start()
     {
+        button.onClick.AddListener(ActivateJobFun);
         if (!GlobalVariables.HasJob)
         {
             buttonText.text = "Start Contract";
@@ -46,7 +49,7 @@ public class ActivateJob : MonoBehaviour
         TimerManagerScript.JobFinished -= UpdateButtonText;
     }
 
-    public void ActivateJobFun()
+    private void ActivateJobFun()
     {
         if (GlobalVariables.HasJob) return;
         buttonText.text = "Ongoing job";
@@ -54,5 +57,6 @@ public class ActivateJob : MonoBehaviour
         Destroy(GlobalVariables.JobGameObject);
         DisplayContractInfo.Instance.ClearJobInfo();
         JobManager.Instance.StartContract(GlobalVariables.CurrentJob.JobTime, GlobalVariables.CurrentJob.JobMoney, GlobalVariables.CurrentJob.JobXp);
+        doJobCanvas.SetActive(true);
     }
 }

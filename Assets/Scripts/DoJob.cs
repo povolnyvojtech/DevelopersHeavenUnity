@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using Random = UnityEngine.Random;
@@ -24,39 +25,54 @@ public class DoJob : MonoBehaviour
             Color buttonColor = (i == 0) ? new Color(0, 1, 0) : new Color(1, 0, 0);
             GameObject newImageObj = Instantiate(imagePrefab, canvasTransform);
             Image imageComponent = newImageObj.GetComponent<Image>();
+            TextMeshProUGUI keyText = newImageObj?.GetComponentInChildren<TextMeshProUGUI>();
         
             Vector3 imgPos = new Vector3(Random.Range(-810, 810), Random.Range(-390,390), 1);
             _currentDirection = Random.Range(0, 4);
             _currentKey = _keyStringsList[Random.Range(0, 3)];
+            keyText.text = _currentKey;
             DetermineKeys(_currentDirection, _currentKey);
             imageComponent.sprite = sprites[_currentDirection];
             imageComponent.color = buttonColor;
             newImageObj.transform.localPosition = imgPos;
             _imagesOnCanvas.Add((newImageObj, _currentDirectionKeyCode, _currentKeyKeyCode));
-            Debug.Log("Direction: " + _imagesOnCanvas[i].Item2 + ", key:" + _imagesOnCanvas[i].Item3);
         }
     }
 
     private void Update()
     {
-        if (Input.GetKeyDown(_imagesOnCanvas[0].Item2) && Input.GetKeyDown(_imagesOnCanvas[0].Item3))
+        if (Input.GetKey(_imagesOnCanvas[0].Item2) && Input.GetKey(_imagesOnCanvas[0].Item3))
         {
             Destroy(_imagesOnCanvas[0].Item1);
+            _imagesOnCanvas.RemoveAt(0);
+            GenerateNextImage();
+            RefreshButtonColors();
+        }
+    }
+
+    private void RefreshButtonColors()
+    {
+        for (int i = 0; i < _imagesOnCanvas.Count; i++)
+        {
+            _imagesOnCanvas[i].Item1.GetComponent<Image>().color = (i == 0) ? new Color(0,1,0) : new Color(1,0,0);
         }
     }
 
 
-    private void GenerateImages()
+    private void GenerateNextImage()
     {
         GameObject newImageObj = Instantiate(imagePrefab, canvasTransform);
         Image imageComponent = newImageObj.GetComponent<Image>();
+        TextMeshProUGUI keyText = newImageObj.GetComponentInChildren<TextMeshProUGUI>();
         
         Vector3 imgPos = new Vector3(Random.Range(-810, 810), Random.Range(-390,390), 1);
         _currentDirection = Random.Range(0, 4);
         _currentKey = _keyStringsList[Random.Range(0, 3)];
+        keyText.text = _currentKey;
         DetermineKeys(_currentDirection, _currentKey);
         imageComponent.sprite = sprites[_currentDirection];
         newImageObj.transform.localPosition = imgPos;
+        _imagesOnCanvas.Add((newImageObj, _currentDirectionKeyCode, _currentKeyKeyCode));
     }
 
     private void DetermineKeys(int direction, string key)

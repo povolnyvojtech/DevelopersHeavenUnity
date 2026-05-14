@@ -43,6 +43,7 @@ public class GlobalVariables : MonoBehaviour
     public static Job CurrentJob;
     public static GameObject JobGameObject;
     public static int CurrentJobMoney;
+    public static int CurrentJobTime;
     public static float CurrentJobTimerSliderValue;
     public static float CurrentPracticeTimerSliderValue;
     
