@@ -2376,7 +2376,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &152215066
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2390,7 +2390,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   imagePrefab: {fileID: 2383041156197192707, guid: dadafe5ad806f8a4796d0eee5694d72b, type: 3}
-  canvasTransform: {fileID: 152215070}
+  arrowsFieldTransform: {fileID: 1157000319}
   greenArrows:
   - {fileID: 1628450619752571053, guid: cfe3e48f77468ff4bb5fa71fe5ee6c80, type: 3}
   - {fileID: 1360828767486169804, guid: 69f528fe76bce854aa1863bd2499ab2d, type: 3}
@@ -25142,8 +25142,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -857.33, y: 419.17}
-  m_SizeDelta: {x: 126.72, y: 70.49}
+  m_AnchoredPosition: {x: -788.22, y: 419.17}
+  m_SizeDelta: {x: 264.93, y: 70.49}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2000497366
 MonoBehaviour:
@@ -25199,7 +25199,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 2
+  m_HorizontalAlignment: 1
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
