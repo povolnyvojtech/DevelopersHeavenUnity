@@ -2376,7 +2376,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &152215066
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2391,11 +2391,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   imagePrefab: {fileID: 2383041156197192707, guid: dadafe5ad806f8a4796d0eee5694d72b, type: 3}
   canvasTransform: {fileID: 152215070}
-  sprites:
-  - {fileID: 7438825297686306050, guid: bbf63f4eb77f0ef4f93dcad2df2d4ffd, type: 3}
-  - {fileID: -5527580962945181715, guid: 4af8e407f2aebb34b945e0955977cd6a, type: 3}
-  - {fileID: 4386953514970804178, guid: 359bf7fc70320b74596cadc8ae32cfd9, type: 3}
-  - {fileID: 1035271773707093762, guid: 87ff6ab86e157e84ba8df1c328b37ae2, type: 3}
+  greenArrows:
+  - {fileID: 1628450619752571053, guid: cfe3e48f77468ff4bb5fa71fe5ee6c80, type: 3}
+  - {fileID: 1360828767486169804, guid: 69f528fe76bce854aa1863bd2499ab2d, type: 3}
+  - {fileID: 2090986547444983117, guid: 7696ce49e23e9604484501ef7593d8bc, type: 3}
+  - {fileID: -7272518694379674748, guid: 314c5e789655cc748a34ff6e502a9309, type: 3}
   doJobCanvas: {fileID: 152215065}
   counterDisplayerText: {fileID: 2000497366}
 --- !u!114 &152215067
@@ -2475,6 +2475,7 @@ RectTransform:
   m_Children:
   - {fileID: 692776626}
   - {fileID: 2000497365}
+  - {fileID: 1157000319}
   - {fileID: 1834585835}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -17012,6 +17013,41 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1152638270}
   m_CullTransparentMesh: 1
+--- !u!1 &1157000318
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1157000319}
+  m_Layer: 5
+  m_Name: ArrowsField
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1157000319
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1157000318}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 152215070}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: -35.19}
+  m_SizeDelta: {x: 1682.05, y: 762.98}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1163736364
 GameObject:
   m_ObjectHideFlags: 0
