@@ -7932,7 +7932,7 @@ GameObject:
   - component: {fileID: 508431082}
   - component: {fileID: 508431081}
   m_Layer: 5
-  m_Name: RentTitle
+  m_Name: RentCostText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10440,6 +10440,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BillManager
   moneyText: {fileID: 602588669}
+  electricityCostText: {fileID: 699201049}
+  rentCostText: {fileID: 508431081}
 --- !u!1 &698164282
 GameObject:
   m_ObjectHideFlags: 0
@@ -10489,7 +10491,7 @@ GameObject:
   - component: {fileID: 699201050}
   - component: {fileID: 699201049}
   m_Layer: 5
-  m_Name: ElectricityTitle
+  m_Name: ElectricityCostText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

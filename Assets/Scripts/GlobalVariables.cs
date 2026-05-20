@@ -78,6 +78,9 @@ public class GlobalVariables : MonoBehaviour
     public static float CurrentRentDuration = 360f;
     public static float RentTimerDuration = 360f;
     public static float CurrentRentSliderValue;
+
+    public static int ElectricityCost = 200;
+    public static int RentCost = 1800;
     
     public static bool NewGame;
     
