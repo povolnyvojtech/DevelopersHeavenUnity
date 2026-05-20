@@ -2617,9 +2617,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a383472300686e4593b1d5e813d8bba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ButtonConstructionLevelIncrease
-  buttonText: {fileID: 0}
   costText: {fileID: 60153861}
+  statsMoneyText: {fileID: 602588669}
   notEnoughMoneyText: {fileID: 34300440}
+  maxSprite: {fileID: -7457538972292058330, guid: b6831c5630be5d9499f9636e5c2b6f63, type: 3}
   roomType: 0
 --- !u!1 &161344569
 GameObject:
@@ -7383,9 +7384,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a383472300686e4593b1d5e813d8bba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ButtonConstructionLevelIncrease
-  buttonText: {fileID: 0}
   costText: {fileID: 1896793209}
+  statsMoneyText: {fileID: 602588669}
   notEnoughMoneyText: {fileID: 34300440}
+  maxSprite: {fileID: -7457538972292058330, guid: b6831c5630be5d9499f9636e5c2b6f63, type: 3}
   roomType: 1
 --- !u!1 &484182663
 GameObject:
@@ -20108,13 +20110,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 693730140}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
+      - m_Target: {fileID: 693730144}
+        m_TargetAssemblyTypeName: BillManager, Assembly-CSharp
+        m_MethodName: RestartRentTimer
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 

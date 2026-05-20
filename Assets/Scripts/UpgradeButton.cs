@@ -5,11 +5,13 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class ButtonConstructionLevelIncrease : MonoBehaviour  
-{  
-    public TextMeshProUGUI buttonText;
+{
     public TextMeshProUGUI costText;
+    public TextMeshProUGUI statsMoneyText;
     public GameObject notEnoughMoneyText;
+    public Sprite maxSprite;
     public int roomType;
+    private Button _button;
 
     private void Start()
     {
@@ -22,11 +24,24 @@ public class ButtonConstructionLevelIncrease : MonoBehaviour
 
         switch (roomType)
         {
-            case 0: if (GlobalVariables.HallBgLevel == 2) { buttonText.text = "MAX"; } break;
-            case 1: if (GlobalVariables.BedroomBgLevel == 2) { buttonText.text = "MAX"; } break;
+            case 0: 
+                if (GlobalVariables.HallBgLevel == 2) 
+                { 
+                    _button.GetComponent<Image>().sprite = maxSprite; 
+                    _button.interactable = false;
+                } 
+                break;
+            case 1: 
+                if (GlobalVariables.BedroomBgLevel == 2) 
+                { 
+                    _button.GetComponent<Image>().sprite = maxSprite; 
+                    _button.interactable = false;
+                } 
+                break;
         }
 
-        GetComponent<Button>().onClick.AddListener(ConstructionLevelIncrease);
+        _button = GetComponent<Button>();
+        _button.onClick.AddListener(ConstructionLevelIncrease);
     }
 
     private void OnEnable()
@@ -46,12 +61,17 @@ public class ButtonConstructionLevelIncrease : MonoBehaviour
                     return;
                 }
                 GlobalVariables.HallBgLevel = Mathf.Clamp(++GlobalVariables.HallBgLevel, 0,2);
-                GlobalVariables.CurrentHallBgUpgradeCost += 1500;
-                costText.text = "Cost " + (GlobalVariables.CurrentHallBgUpgradeCost);
+                GlobalVariables.Money -= GlobalVariables.CurrentHallBgUpgradeCost;
+                statsMoneyText.text = GlobalVariables.Money.ToString();
                 if (GlobalVariables.HallBgLevel == 2)
                 {
-                    buttonText.text = "MAX";
+                    _button.GetComponent<Image>().sprite = maxSprite;
+                    _button.interactable = false;
+                    costText.text = "";
+                    break;
                 }
+                GlobalVariables.CurrentHallBgUpgradeCost += 1500;
+                costText.text = "Cost " + (GlobalVariables.CurrentHallBgUpgradeCost);
                 break;
             }
             case 1:
@@ -62,12 +82,17 @@ public class ButtonConstructionLevelIncrease : MonoBehaviour
                     return;
                 }
                 GlobalVariables.BedroomBgLevel = Mathf.Clamp(++GlobalVariables.BedroomBgLevel, 0,2);
-                GlobalVariables.CurrentBedroomBgUpgradeCost += 1300;
-                costText.text = "Cost " + (GlobalVariables.CurrentBedroomBgUpgradeCost);
+                GlobalVariables.Money -= GlobalVariables.CurrentBedroomBgUpgradeCost;
+                statsMoneyText.text = GlobalVariables.Money.ToString();
                 if (GlobalVariables.BedroomBgLevel == 2)
                 {
-                    buttonText.text = "MAX";
+                    _button.GetComponent<Image>().sprite = maxSprite;
+                    _button.interactable = false;
+                    costText.text = "";
+                    break;
                 }
+                GlobalVariables.CurrentBedroomBgUpgradeCost += 1300;
+                costText.text = "Cost " + (GlobalVariables.CurrentBedroomBgUpgradeCost);
                 break;
             }
         }
