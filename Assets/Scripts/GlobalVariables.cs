@@ -65,6 +65,7 @@ public class GlobalVariables : MonoBehaviour
     //gambling
     public static int CurrentSlotBet = 10;
     public static int CurrentBlackJackBet = 10;
+    public static bool IsSpinning = false;
     
     //bills
     public static float CurrentElectricityDuration = 180f;

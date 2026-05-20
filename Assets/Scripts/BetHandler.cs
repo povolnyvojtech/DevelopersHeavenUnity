@@ -8,6 +8,7 @@ public class BetHandler : MonoBehaviour
     public Button lowerBetButton;
     public Button riseBetButton;
     public Button maxBetButton;
+    public Button resetBetButton;
     public int type;
 
     private void OnEnable()
@@ -28,10 +29,17 @@ public class BetHandler : MonoBehaviour
         lowerBetButton.onClick.AddListener(LowerBet);
         riseBetButton.onClick.AddListener(RiseBet);
         maxBetButton.onClick.AddListener(MaxBet);
+        resetBetButton.onClick.AddListener(ResetBet);
     }
 
     private void LowerBet()
     {
+        if  (GlobalVariables.Money == 0)
+        {
+            GlobalVariables.CurrentSlotBet = 0;
+            currentBetText.text = "0";
+            return;
+        }
         switch (type)
         {
             case 0:
@@ -53,6 +61,12 @@ public class BetHandler : MonoBehaviour
 
     private void RiseBet()
     {
+        if  (GlobalVariables.Money == 0)
+        {
+            GlobalVariables.CurrentSlotBet = 0;
+            currentBetText.text = "0";
+            return;
+        }
         switch (type)
         {
             case 0:
@@ -76,6 +90,7 @@ public class BetHandler : MonoBehaviour
     {
         if (GlobalVariables.Money == 0)
         {
+            GlobalVariables.CurrentSlotBet = 0;
             currentBetText.text = "0";
             return;
         }
@@ -96,6 +111,18 @@ public class BetHandler : MonoBehaviour
             }
         }
     }
-    
-    
+
+    private void ResetBet()
+    {
+        if  (GlobalVariables.Money == 0)
+        {
+            GlobalVariables.CurrentSlotBet = 0;
+            currentBetText.text = "0";
+        }
+        else
+        {
+            GlobalVariables.CurrentSlotBet = 10;
+            currentBetText.text = "10";
+        }
+    }
 }

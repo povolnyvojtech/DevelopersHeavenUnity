@@ -30,7 +30,6 @@ public class SlotsManager : MonoBehaviour
     
     private readonly List<int> _chosenIndexes = new List<int>() {-1,-1,-1};
     private readonly List<int> _spinCount = new List<int>() {10,14,18};
-    private bool _isSpinning;
 
     private event Action FinishedSpinning;
     private int _finishedSlots;
@@ -39,6 +38,7 @@ public class SlotsManager : MonoBehaviour
     public TextMeshProUGUI xpText;
     public TextMeshProUGUI moneyText;
     public GameObject notEnoughMoneyText;
+    public TextMeshProUGUI betDisplayer;
 
     private string _typeOfWin;
     
@@ -53,22 +53,18 @@ public class SlotsManager : MonoBehaviour
         FinishedSpinning += WinCheck;
     }
 
-    private void Update()
-    {
-        if (_isSpinning) return;
-    }
-
     public void Spin()
     {
-        if (_isSpinning) return;
-        if (GlobalVariables.Money < GlobalVariables.CurrentSlotBet)
+        if (GlobalVariables.IsSpinning) return;
+        if (GlobalVariables.Money < GlobalVariables.CurrentSlotBet || GlobalVariables.Money == 0)
         {
+            betDisplayer.text = GlobalVariables.CurrentSlotBet.ToString();
             StartCoroutine(ShowNotEnoughMoneyText());
             return;
         }
         GlobalVariables.Money -= GlobalVariables.CurrentSlotBet;
         GlobalVariables.UpdateStats(levelText, xpText, moneyText);
-        _isSpinning = true;
+        GlobalVariables.IsSpinning = true;
         
         for (int i = 0; i < images.Length; i++)
         {
@@ -164,7 +160,7 @@ public class SlotsManager : MonoBehaviour
             GlobalVariables.Money += 30*GlobalVariables.CurrentSlotBet;
             GlobalVariables.UpdateStats(levelText, xpText, moneyText);
         }
-        _isSpinning = false;
+        GlobalVariables.IsSpinning = false;
     }
 
     private IEnumerator HideHasWonText()
