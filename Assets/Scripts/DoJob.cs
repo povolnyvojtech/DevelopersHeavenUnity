@@ -23,6 +23,7 @@ public class DoJob : MonoBehaviour
     private KeyCode _currentKeyKeyCode;
     private string _currentKey;
     private int _currentCount;
+    private KeyCode[] _lastCombo = {};
 
     private void OnEnable()
     {
@@ -55,6 +56,7 @@ public class DoJob : MonoBehaviour
             newImageObj.transform.localPosition = imgPos;
             _imagesOnCanvas.Add((newImageObj, _currentDirectionKeyCode, _currentKeyKeyCode));
         }
+        _lastCombo = new []{_imagesOnCanvas[0].Item2, _imagesOnCanvas[0].Item3};
     }
 
     private void OnDisable()
@@ -74,18 +76,9 @@ public class DoJob : MonoBehaviour
         if (_imagesOnCanvas.Count == 0) return;
 
         KeyCode correctKey1 = _imagesOnCanvas[0].Item2;
-        KeyCode correctKey2 = _imagesOnCanvas[0].Item3;
+        KeyCode correctKey3 = _imagesOnCanvas[0].Item3;
 
-        if (Input.GetKey(correctKey1) && Input.GetKey(correctKey2))
-        {
-            Destroy(_imagesOnCanvas[0].Item1);
-            _imagesOnCanvas.RemoveAt(0);
-
-            GenerateNextImage();
-            RefreshButtonColors();
-            counterDisplayerText.text = _currentCount + "/" + GlobalVariables.NumberOfButtons;
-            return;
-        }
+        bool keyJustPressed = false;
 
         KeyCode pressedArrow = KeyCode.None;
         foreach (KeyCode arrow in _arrowKeys)
@@ -93,6 +86,7 @@ public class DoJob : MonoBehaviour
             if (Input.GetKey(arrow))
             {
                 pressedArrow = arrow;
+                if (Input.GetKeyDown(arrow)) keyJustPressed = true;
                 break;
             }
         }
@@ -103,13 +97,23 @@ public class DoJob : MonoBehaviour
             if (Input.GetKey(letter))
             {
                 pressedLetter = letter;
+                if (Input.GetKeyDown(letter)) keyJustPressed = true;
                 break;
             }
         }
-
-        if (pressedArrow != KeyCode.None && pressedLetter != KeyCode.None)
+        
+        if (pressedArrow != KeyCode.None && pressedLetter != KeyCode.None && keyJustPressed)
         {
-            if (pressedArrow != correctKey1 || pressedLetter != correctKey2)
+            if (pressedArrow == correctKey1 && pressedLetter == correctKey3)
+            {
+                Destroy(_imagesOnCanvas[0].Item1);
+                _imagesOnCanvas.RemoveAt(0);
+
+                GenerateNextImage();
+                RefreshButtonColors();
+                counterDisplayerText.text = _currentCount + "/" + GlobalVariables.NumberOfButtons;
+            }
+            else
             {
                 DetermineTimePenalty();
             }
