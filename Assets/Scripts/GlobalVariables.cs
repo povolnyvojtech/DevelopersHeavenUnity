@@ -27,7 +27,7 @@ public class GlobalVariables : MonoBehaviour
     public static int CurrentPracticingType = 2;
     
     //career variables
-    public static bool HasCareer = false;
+    public static bool HasCareer;
     public static string CareerPath = "None"; //vždy formát - TYPPROFESEzamereni - GDgodot 
 
     public static int Money = 5000;

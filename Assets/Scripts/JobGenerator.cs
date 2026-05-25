@@ -15,6 +15,7 @@ public class JobGenerator : MonoBehaviour
     private string _jobType = "GDgodot"; //GDgodot is for developing TODO smazat pro build
     public TextMeshProUGUI timeTillReset;
     private readonly List<string> _gameDevJobTypes = new List<string>() {"Rockstar Games", "Naughty Dog", "CD Projekt", "FromSoftware", "Bethesda Game Studios", "Larian Studios", "Valve", "Remedy Entertainment", "Guerrilla Games"};
+    private readonly List<string> _webDevSoftwareEngineerJobTypes = new List<string>() {"Google", "Meta", "Shopify", "Stripe", "Netflix", "Spotify", "Vercel", "GitHub", "Airbnb"};
 
     private void Awake()
     {
@@ -54,10 +55,10 @@ public class JobGenerator : MonoBehaviour
                     "GDgodot" => ChooseRandomJobType(_gameDevJobTypes),
                     "GDunity" => ChooseRandomJobType(_gameDevJobTypes),
                     "GDue" => ChooseRandomJobType(_gameDevJobTypes),
-                    "WDfrontend" => "Web Frontend",
-                    "WDbackend" => "Web Backend",
-                    "SEpython" => "Python",
-                    "SEjava" => "Java",
+                    "WDfrontend" => ChooseRandomJobType(_webDevSoftwareEngineerJobTypes),
+                    "WDbackend" => ChooseRandomJobType(_webDevSoftwareEngineerJobTypes),
+                    "SEpython" => ChooseRandomJobType(_webDevSoftwareEngineerJobTypes),
+                    "SEjava" => ChooseRandomJobType(_webDevSoftwareEngineerJobTypes),
                     _ => _jobType //pokud _jobType není nic z uvedenýho tak tam nechá co tam bylo
                 };
                 if (_jobType != null)
