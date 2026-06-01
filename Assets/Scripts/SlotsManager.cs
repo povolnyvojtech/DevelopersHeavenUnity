@@ -39,7 +39,8 @@ public class SlotsManager : MonoBehaviour
     public TextMeshProUGUI xpText;
     public TextMeshProUGUI moneyText;
     public GameObject notEnoughMoneyText;
-    public TextMeshProUGUI betDisplayer;
+    public TMP_InputField betInput;
+    private bool _isShowingNotEnoughMoney = false;
 
     private string _typeOfWin;
     
@@ -59,7 +60,8 @@ public class SlotsManager : MonoBehaviour
         if (GlobalVariables.IsSpinning) return;
         if (GlobalVariables.Money < GlobalVariables.CurrentSlotBet || GlobalVariables.Money == 0)
         {
-            betDisplayer.text = GlobalVariables.CurrentSlotBet.ToString();
+            betInput.text = GlobalVariables.CurrentSlotBet.ToString();
+            if (_isShowingNotEnoughMoney) return;
             StartCoroutine(ShowNotEnoughMoneyText());
             return;
         }
@@ -75,9 +77,11 @@ public class SlotsManager : MonoBehaviour
 
     private IEnumerator ShowNotEnoughMoneyText()
     {
+        _isShowingNotEnoughMoney = true;
         notEnoughMoneyText.SetActive(true);
         yield return new WaitForSeconds(2f);
         notEnoughMoneyText.SetActive(false);
+        _isShowingNotEnoughMoney = false;
     }
 
     private IEnumerator ChooseFruits(GameObject slot, int currentImageIndex)

@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 public class BetHandler : MonoBehaviour
 {
-    public TextMeshProUGUI currentBetText;
+    public TMP_InputField currentBetInput;
     public Button lowerBetButton;
     public Button riseBetButton;
     public Button maxBetButton;
@@ -17,12 +17,12 @@ public class BetHandler : MonoBehaviour
         {
             case 0:
             {
-                currentBetText.text = GlobalVariables.CurrentSlotBet.ToString();
+                currentBetInput.text = GlobalVariables.CurrentSlotBet.ToString();
                 break;
             }
             case 1:
             {
-                currentBetText.text = GlobalVariables.CurrentBlackJackBet.ToString();
+                currentBetInput.text = GlobalVariables.CurrentBlackJackBet.ToString();
                 break;
             }
         }
@@ -30,6 +30,13 @@ public class BetHandler : MonoBehaviour
         riseBetButton.onClick.AddListener(RiseBet);
         maxBetButton.onClick.AddListener(MaxBet);
         resetBetButton.onClick.AddListener(ResetBet);
+        currentBetInput.onValueChanged.AddListener(delegate { ChangeBetByInput();});
+    }
+
+    private void ChangeBetByInput()
+    {
+        GlobalVariables.CurrentSlotBet = int.Parse(currentBetInput.text);
+        currentBetInput.text = GlobalVariables.CurrentSlotBet.ToString();
     }
 
     private void LowerBet()
@@ -37,7 +44,7 @@ public class BetHandler : MonoBehaviour
         if  (GlobalVariables.Money == 0)
         {
             GlobalVariables.CurrentSlotBet = 0;
-            currentBetText.text = "0";
+            currentBetInput.text = "0";
             return;
         }
         switch (type)
@@ -46,14 +53,14 @@ public class BetHandler : MonoBehaviour
             {
                 if (GlobalVariables.CurrentSlotBet - 10 < 0) return;
                 GlobalVariables.CurrentSlotBet -= 10;
-                currentBetText.text = GlobalVariables.CurrentSlotBet.ToString();
+                currentBetInput.text = GlobalVariables.CurrentSlotBet.ToString();
                 break;
             }
             case 1:
             {
                 if (GlobalVariables.CurrentBlackJackBet - 10 < 0) return;
                 GlobalVariables.CurrentBlackJackBet -= 10;
-                currentBetText.text = GlobalVariables.CurrentBlackJackBet.ToString();
+                currentBetInput.text = GlobalVariables.CurrentBlackJackBet.ToString();
                 break;
             }
         }
@@ -64,7 +71,7 @@ public class BetHandler : MonoBehaviour
         if  (GlobalVariables.Money == 0)
         {
             GlobalVariables.CurrentSlotBet = 0;
-            currentBetText.text = "0";
+            currentBetInput.text = "0";
             return;
         }
         switch (type)
@@ -73,14 +80,15 @@ public class BetHandler : MonoBehaviour
             {
                 if (GlobalVariables.CurrentSlotBet + 10 > GlobalVariables.Money) return;
                 GlobalVariables.CurrentSlotBet += 10;
-                currentBetText.text = GlobalVariables.CurrentSlotBet.ToString();
+                Debug.Log(GlobalVariables.CurrentSlotBet);
+                currentBetInput.text = GlobalVariables.CurrentSlotBet.ToString();
                 break;
             }
             case 1:
             {
                 if (GlobalVariables.CurrentBlackJackBet + 10 > GlobalVariables.Money) return;
                 GlobalVariables.CurrentBlackJackBet += 10;
-                currentBetText.text = GlobalVariables.CurrentBlackJackBet.ToString();
+                currentBetInput.text = GlobalVariables.CurrentBlackJackBet.ToString();
                 break;
             }
         }
@@ -91,7 +99,7 @@ public class BetHandler : MonoBehaviour
         if (GlobalVariables.Money == 0)
         {
             GlobalVariables.CurrentSlotBet = 0;
-            currentBetText.text = "0";
+            currentBetInput.text = "0";
             return;
         }
 
@@ -100,13 +108,13 @@ public class BetHandler : MonoBehaviour
             case 0:
             {
                 GlobalVariables.CurrentSlotBet = GlobalVariables.Money;
-                currentBetText.text = GlobalVariables.CurrentSlotBet.ToString();
+                currentBetInput.text = GlobalVariables.CurrentSlotBet.ToString();
                 break;
             }
             case 1:
             {
                 GlobalVariables.CurrentBlackJackBet = GlobalVariables.Money;
-                currentBetText.text = GlobalVariables.CurrentBlackJackBet.ToString();
+                currentBetInput.text = GlobalVariables.CurrentBlackJackBet.ToString();
                 break;
             }
         }
@@ -117,12 +125,12 @@ public class BetHandler : MonoBehaviour
         if  (GlobalVariables.Money == 0)
         {
             GlobalVariables.CurrentSlotBet = 0;
-            currentBetText.text = "0";
+            currentBetInput.text = "0";
         }
         else
         {
             GlobalVariables.CurrentSlotBet = 10;
-            currentBetText.text = "10";
+            currentBetInput.text = "10";
         }
     }
 }

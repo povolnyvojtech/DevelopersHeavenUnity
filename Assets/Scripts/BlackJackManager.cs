@@ -38,6 +38,7 @@ public class BlackJackManager : MonoBehaviour
     };
     private List<int> _playerDealtCards = new List<int>();
     private List<int> _dealerDealtCards = new List<int>();
+    private bool _isShowingNotEnoughMoney = false;
 
     private void OnEnable()
     {
@@ -76,6 +77,7 @@ public class BlackJackManager : MonoBehaviour
         if (GlobalVariables.CurrentBlackJackBet > GlobalVariables.Money)
         {
             notEnoughMoneyText.SetActive(true);
+            if (_isShowingNotEnoughMoney) return;
             StartCoroutine(HideText(false));
             return;
         }
@@ -241,8 +243,10 @@ public class BlackJackManager : MonoBehaviour
             }
             case false:
             {
+                _isShowingNotEnoughMoney = true;
                 yield return new WaitForSeconds(2f);
                 notEnoughMoneyText.SetActive(false);
+                _isShowingNotEnoughMoney = false;
                 PrepareForNewRound();
                 break;
             }
