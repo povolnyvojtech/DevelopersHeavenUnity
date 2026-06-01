@@ -16,6 +16,7 @@ public class SlotsManager : MonoBehaviour
     public Button raiseBetButton;
     public Button lowerBetButton;
     public Button maxBetButton;
+    public Button resetButton;
     public GameObject[] images = new GameObject[3]; 
     public Sprite[] icons = new Sprite[7];
     /*
@@ -87,6 +88,7 @@ public class SlotsManager : MonoBehaviour
         lowerBetButton.interactable = false;
         maxBetButton.interactable = false;
         spinButton.interactable = false;
+        resetButton.interactable = false;
         for (int i = 0; i < _spinCount[currentImageIndex]; i++)
         {
             chosenIndex = Random.Range(0, icons.Length); 

@@ -9,12 +9,4 @@ public class SetActiveScene : MonoBehaviour
     {
         GlobalVariables.ActiveScene = "Desktop";
     }
-
-    private void Update()
-    {
-        if (SceneManager.GetActiveScene().name == "Desktop" && Input.GetKeyDown(KeyCode.Escape))
-        {
-            SceneManager.LoadScene("MainMenu");
-        }
-    }
 }
