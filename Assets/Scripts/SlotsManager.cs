@@ -107,6 +107,7 @@ public class SlotsManager : MonoBehaviour
         lowerBetButton.interactable = true;
         maxBetButton.interactable = true;
         spinButton.interactable = true;
+        resetButton.interactable = true;
         _finishedSlots = 0;
         if (_chosenIndexes[0] == _chosenIndexes[1] && _chosenIndexes[1] == _chosenIndexes[2])
         {
