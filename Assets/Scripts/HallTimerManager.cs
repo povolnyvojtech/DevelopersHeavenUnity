@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 public class HallTimerManager : MonoBehaviour
 {
     public static HallTimerManager Instance;
+    public GameObject pauseMenu;
 
     private void Awake()
     {
@@ -20,6 +21,15 @@ public class HallTimerManager : MonoBehaviour
         else
         {
             Destroy(gameObject);
+        }
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            pauseMenu.GetComponent<CanvasGroup>().alpha = 1.0f;
+            Time.timeScale = 0;
         }
     }
 

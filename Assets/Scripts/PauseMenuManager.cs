@@ -7,25 +7,15 @@ public class PauseMenuManager : MonoBehaviour
     public CanvasGroup canvasGroup;
     public Button resumeButton;
     public Button quitButton;
-
-    private bool _isPaused;
+    public static PauseMenuManager Instance;
 
     private void Start()
     {
-        canvasGroup.alpha = 0;
-    }
-
-    private void Update()
-    {
-        if (!Input.GetKeyDown(KeyCode.Escape)) return;
-        if (_isPaused)
+        if (!Instance)
         {
-            ResumeGame();
+            Instance = this;
         }
-        else
-        {
-            PauseGame();
-        }
+        pauseCanvas.GetComponent<CanvasGroup>().alpha = 0;
     }
 
     private void OnEnable()
@@ -40,18 +30,10 @@ public class PauseMenuManager : MonoBehaviour
         quitButton.onClick.RemoveListener(QuitGame);
     }
 
-    private void PauseGame()
-    {
-        canvasGroup.alpha = 1;
-        Time.timeScale = 0;
-        _isPaused = true;
-    }
-
     public void ResumeGame()
     {
         canvasGroup.alpha = 0;
         Time.timeScale = 1;
-        _isPaused = false;
     }
 
     private static void QuitGame()
