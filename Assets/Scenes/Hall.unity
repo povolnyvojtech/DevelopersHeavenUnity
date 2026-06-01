@@ -1005,6 +1005,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1061658220160944258, guid: 82cade0d85dbfd24db8aae39700c89f9, type: 3}
+      propertyPath: m_RaycastTarget
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6323654300810998504, guid: 82cade0d85dbfd24db8aae39700c89f9, type: 3}
       propertyPath: m_Camera
       value: 
