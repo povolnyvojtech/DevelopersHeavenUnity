@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: ccc51822d4e904b4a83779c7e4a2c8fe
+guid: 3ed8e606e6d0c7546822e44e938a7c1e
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7319252338748241586
-    second: Fumble_UI_0
+      213: -1445751283155725941
+    second: inbox_notif_bg_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -126,23 +126,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Fumble_UI_0
+      name: inbox_notif_bg_0
       rect:
         serializedVersion: 2
-        x: 155
-        y: 29
-        width: 332
-        height: 288
+        x: 340
+        y: 110
+        width: 121
+        height: 59
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 2b639881935339560800000000000000
-      internalID: 7319252338748241586
+      spriteID: b8110fd2ed8afebe0800000000000000
+      internalID: -1445751283155725941
       vertices: []
       indices: 
       edges: []
@@ -151,7 +151,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5ebfd38bc3b2f4d4c818404814570833
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -161,7 +161,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Fumble_UI_0: 7319252338748241586
+      inbox_notif_bg_0: -1445751283155725941
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

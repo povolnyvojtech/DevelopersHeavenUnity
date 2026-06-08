@@ -1,10 +1,67 @@
 fileFormatVersion: 2
-guid: ccc51822d4e904b4a83779c7e4a2c8fe
+guid: f5f548b857825e84a8cc24606493376d
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7319252338748241586
-    second: Fumble_UI_0
+      213: 7196524044305203530
+    second: meet_inbox_bg_0
+  - first:
+      213: -2777817330462574692
+    second: meet_inbox_bg_1
+  - first:
+      213: 7988917071137758053
+    second: meet_inbox_bg_2
+  - first:
+      213: -7905553408321066637
+    second: meet_inbox_bg_3
+  - first:
+      213: -3650594437471498032
+    second: meet_inbox_bg_4
+  - first:
+      213: -6867359279497615196
+    second: meet_inbox_bg_5
+  - first:
+      213: 840082036482282509
+    second: meet_inbox_bg_6
+  - first:
+      213: -1925858313253111839
+    second: meet_inbox_bg_7
+  - first:
+      213: 1450472920315360111
+    second: meet_inbox_bg_8
+  - first:
+      213: -1604865559112643739
+    second: meet_inbox_bg_9
+  - first:
+      213: -4918691484193983713
+    second: meet_inbox_bg_10
+  - first:
+      213: 7271589229759064937
+    second: meet_inbox_bg_11
+  - first:
+      213: -9108251062280243125
+    second: meet_inbox_bg_12
+  - first:
+      213: 3315928711426255150
+    second: meet_inbox_bg_13
+  - first:
+      213: 7371266465497549722
+    second: meet_inbox_bg_14
+  - first:
+      213: -2238167214956009150
+    second: meet_inbox_bg_15
+  - first:
+      213: -2881105810888604324
+    second: meet_inbox_bg_16
+  - first:
+      213: -6713919194937825819
+    second: meet_inbox_bg_17
+  - first:
+      213: 2698578285696688467
+    second: meet_inbox_bg_18
+  - first:
+      213: 6959205081075277689
+    second: meet_inbox_bg_19
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -126,23 +183,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Fumble_UI_0
+      name: meet_inbox_bg_0
       rect:
         serializedVersion: 2
-        x: 155
-        y: 29
-        width: 332
-        height: 288
+        x: 178
+        y: 47
+        width: 284
+        height: 175
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 2b639881935339560800000000000000
-      internalID: 7319252338748241586
+      spriteID: a418e5e4d703fd360800000000000000
+      internalID: 7196524044305203530
       vertices: []
       indices: 
       edges: []
@@ -151,7 +208,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5ebfd38bc3b2f4d4c818404814570833
+    spriteID: d5b45396fdb673541ab1ce324c285ffc
     internalID: 0
     vertices: []
     indices: 
@@ -161,7 +218,26 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Fumble_UI_0: 7319252338748241586
+      meet_inbox_bg_0: 7196524044305203530
+      meet_inbox_bg_1: -2777817330462574692
+      meet_inbox_bg_10: -4918691484193983713
+      meet_inbox_bg_11: 7271589229759064937
+      meet_inbox_bg_12: -9108251062280243125
+      meet_inbox_bg_13: 3315928711426255150
+      meet_inbox_bg_14: 7371266465497549722
+      meet_inbox_bg_15: -2238167214956009150
+      meet_inbox_bg_16: -2881105810888604324
+      meet_inbox_bg_17: -6713919194937825819
+      meet_inbox_bg_18: 2698578285696688467
+      meet_inbox_bg_19: 6959205081075277689
+      meet_inbox_bg_2: 7988917071137758053
+      meet_inbox_bg_3: -7905553408321066637
+      meet_inbox_bg_4: -3650594437471498032
+      meet_inbox_bg_5: -6867359279497615196
+      meet_inbox_bg_6: 840082036482282509
+      meet_inbox_bg_7: -1925858313253111839
+      meet_inbox_bg_8: 1450472920315360111
+      meet_inbox_bg_9: -1604865559112643739
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

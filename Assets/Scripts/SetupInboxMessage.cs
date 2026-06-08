@@ -10,7 +10,7 @@ public class SetupInboxMessage : MonoBehaviour
 
     public void SetupMessage(List<string> inboxWomenMessages)
     {
-        womanNameText.text = "Name: " + inboxWomenMessages[0] + " - " +  inboxWomenMessages[1];
+        womanNameText.text = inboxWomenMessages[0] + " - " +  inboxWomenMessages[1];
         messageText.text = inboxWomenMessages[2];
     }
 }

@@ -8,6 +8,6 @@ public class DatingProfile : MonoBehaviour
 
     private void OnEnable()
     {
-        username.text = "Username: " + GlobalVariables.DatingName + " " + GlobalVariables.DatingSurname;
+        username.text = GlobalVariables.DatingName + " " + GlobalVariables.DatingSurname;
     }
 }

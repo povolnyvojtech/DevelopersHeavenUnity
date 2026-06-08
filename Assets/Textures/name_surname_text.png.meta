@@ -1,10 +1,40 @@
 fileFormatVersion: 2
-guid: ccc51822d4e904b4a83779c7e4a2c8fe
+guid: f1fba17f653dda94bb0e1c2492d39489
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7319252338748241586
-    second: Fumble_UI_0
+      213: 689566994225435201
+    second: name_surname_text_0
+  - first:
+      213: -4020936307638025133
+    second: name_surname_text_1
+  - first:
+      213: -6699782672099093467
+    second: name_surname_text_2
+  - first:
+      213: 5986068866785417916
+    second: name_surname_text_3
+  - first:
+      213: 841835710080685321
+    second: name_surname_text_4
+  - first:
+      213: -2988321262998044843
+    second: name_surname_text_5
+  - first:
+      213: -4348706510385417265
+    second: name_surname_text_6
+  - first:
+      213: 3885912555293199725
+    second: name_surname_text_7
+  - first:
+      213: -244211588470867428
+    second: name_surname_text_8
+  - first:
+      213: -7445936363778865532
+    second: name_surname_text_9
+  - first:
+      213: -6095075304418869774
+    second: name_surname_text_10
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -126,13 +156,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Fumble_UI_0
+      name: name_surname_text_0
       rect:
         serializedVersion: 2
-        x: 155
-        y: 29
-        width: 332
-        height: 288
+        x: 177
+        y: 189
+        width: 76
+        height: 34
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,8 +171,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 2b639881935339560800000000000000
-      internalID: 7319252338748241586
+      spriteID: 14214ab1785d19900800000000000000
+      internalID: 689566994225435201
       vertices: []
       indices: 
       edges: []
@@ -151,7 +181,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5ebfd38bc3b2f4d4c818404814570833
+    spriteID: a4cd6dbb740105545b219587cd979eb0
     internalID: 0
     vertices: []
     indices: 
@@ -161,7 +191,18 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Fumble_UI_0: 7319252338748241586
+      name_surname_text_0: 689566994225435201
+      name_surname_text_1: -4020936307638025133
+      name_surname_text_10: -6095075304418869774
+      name_surname_text_11: -500251300
+      name_surname_text_2: -6699782672099093467
+      name_surname_text_3: 5986068866785417916
+      name_surname_text_4: 841835710080685321
+      name_surname_text_5: -2988321262998044843
+      name_surname_text_6: -4348706510385417265
+      name_surname_text_7: 3885912555293199725
+      name_surname_text_8: -244211588470867428
+      name_surname_text_9: -7445936363778865532
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

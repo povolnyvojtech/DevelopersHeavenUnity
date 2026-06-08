@@ -129,12 +129,12 @@ TextureImporter:
       name: Fumble_input_0
       rect:
         serializedVersion: 2
-        x: 348
-        y: 110
-        width: 85
-        height: 59
+        x: 257
+        y: 188
+        width: 210
+        height: 15
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -151,7 +151,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 0b38e6d3f16b54242a3b27d3b0ed93dc
     internalID: 0
     vertices: []
     indices: 

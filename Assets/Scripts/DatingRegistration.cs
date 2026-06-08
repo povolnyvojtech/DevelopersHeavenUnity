@@ -12,7 +12,7 @@ public class DatingRegistration : MonoBehaviour
     public GameObject registrationDisplay;
     public GameObject profileDisplay;
 
-    public static event Action userHasRegistered;
+    public static event Action UserHasRegistered;
     
 
     void Start()
@@ -29,6 +29,6 @@ public class DatingRegistration : MonoBehaviour
         GlobalVariables.DatingHasRegistered = true;
         registrationDisplay.SetActive(false);
         profileDisplay.SetActive(true);
-        userHasRegistered?.Invoke();
+        UserHasRegistered?.Invoke();
     }
 }

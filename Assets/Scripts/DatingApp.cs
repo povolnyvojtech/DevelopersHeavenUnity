@@ -13,7 +13,7 @@ public class DatingApp : MonoBehaviour
     {
         if (!GlobalVariables.DatingHasRegistered)
         {
-            DatingRegistration.userHasRegistered += UpdateUserInfo;
+            DatingRegistration.UserHasRegistered += UpdateUserInfo;
         }
         else
         {
