@@ -4,10 +4,10 @@ using UnityEngine.UI;
 public class WomanProfile
 {
     public string ProfileName;
-    public string Age;
+    public int Age;
     public string Hobbies;
     
-    public WomanProfile(string name, string age, string hobbies)
+    public WomanProfile(string name, int age, string hobbies)
     {
         ProfileName = name;
         Age = age;

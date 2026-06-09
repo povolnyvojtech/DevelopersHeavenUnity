@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using TMPro;
 using UnityEngine;
 
 public class DatingAppMeet : MonoBehaviour
@@ -89,7 +88,7 @@ public class DatingAppMeet : MonoBehaviour
             StartCoroutine(SlideAndDestroy(objectToAnimate));
         }
         string womanName = _names[Random.Range(0, 15)];
-        string age = Random.Range(15, 30).ToString();
+        int age = Random.Range(15, 30);
         string hobbies = "";
         
         for (int i = 0; i < 5; i++)
