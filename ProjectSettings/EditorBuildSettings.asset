@@ -15,12 +15,6 @@ EditorBuildSettings:
     path: Assets/Scenes/Bedroom.unity
     guid: bf3681fbaf0d5424bbd99f7beef0ab66
   - enabled: 1
-    path: Assets/Scenes/Kitchen.unity
-    guid: 713bb1fefd1612044b4704d702b7195f
-  - enabled: 1
-    path: Assets/Scenes/CityMap.unity
-    guid: 0399d0ffaf3392f49a034e178153722e
-  - enabled: 1
     path: Assets/Scenes/PcChoosePath.unity
     guid: dd2b7fa9d6e015549b89df3c9aaa3354
   - enabled: 1

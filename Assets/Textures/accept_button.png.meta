@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 69f528fe76bce854aa1863bd2499ab2d
+guid: 7b268ca6a8f6c904d8e7ea6e0abaa03b
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1360828767486169804
-    second: Minigame_Arrow_Green_DOWN_0
+      213: -2574178716149005390
+    second: accept_button_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -126,13 +126,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Minigame_Arrow_Green_DOWN_0
+      name: accept_button_0
       rect:
         serializedVersion: 2
-        x: 5
-        y: 1
-        width: 38
-        height: 44
+        x: 0
+        y: 0
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,8 +141,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: cc25526dd82a2e210800000000000000
-      internalID: 1360828767486169804
+      spriteID: 2b34193a81ea64cd0800000000000000
+      internalID: -2574178716149005390
       vertices: []
       indices: 
       edges: []
@@ -161,7 +161,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Minigame_Arrow_Green_DOWN_0: 1360828767486169804
+      accept_button_0: -2574178716149005390
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -201,7 +201,6 @@ public class DoJob : MonoBehaviour
             x = Random.Range(-810, 810);
             y = Random.Range(-390, 390);
         }
-        Debug.Log("Last pos: " +  lastPos + " new pos: " +  x + ", " + y);
 
         var imgPos = new Vector3(x, y);
         int randomDirection = Random.Range(0, 4);

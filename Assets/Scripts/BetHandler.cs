@@ -35,7 +35,9 @@ public class BetHandler : MonoBehaviour
 
     private void ChangeBetByInput()
     {
-        GlobalVariables.CurrentSlotBet = int.Parse(currentBetInput.text);
+        int value = int.Parse(currentBetInput.text);
+        if (value < 0) value *= -1;
+        GlobalVariables.CurrentSlotBet = value;
         currentBetInput.text = GlobalVariables.CurrentSlotBet.ToString();
     }
 
