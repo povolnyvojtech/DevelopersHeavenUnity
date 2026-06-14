@@ -102,7 +102,6 @@ public class TimerManagerScript : MonoBehaviour
         
         PracticeTimerImageBg.SetActive(false);
         GlobalVariables.CurrentPracticeTimerSliderValue = 0;
-        GlobalVariables.IsPracticing = false;
         
         if (JobManager.Instance)
         {

@@ -1,6 +1,7 @@
 using System.Collections;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
 using UnityEngine.UI;
 
 public class PracticeCanvasManager : MonoBehaviour
@@ -47,7 +48,12 @@ public class PracticeCanvasManager : MonoBehaviour
     
     public void RaiseQualityMultiplier()
     {
-        if (GlobalVariables.IsPracticing || GlobalVariables.QualityLevel == 10) return;
+        if (GlobalVariables.IsPracticing || GlobalVariables.QualityLevel == 10)
+        {
+            Debug.Log("Is already practicing");
+            return;
+        };
+        Debug.Log("Practicing beginning");
         GlobalVariables.IsPracticing = true;
         GlobalVariables.CurrentPracticingType = 0;
         StartCoroutine(TimerManagerScript.PracticingTimer(0));

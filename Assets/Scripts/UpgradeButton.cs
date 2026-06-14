@@ -13,8 +13,11 @@ public class ButtonConstructionLevelIncrease : MonoBehaviour
     public int roomType;
     private Button _button;
 
-    private void Start()
+    private void OnEnable()
     {
+        _button = GetComponent<Button>();
+        _button.onClick.AddListener(ConstructionLevelIncrease);
+        notEnoughMoneyText.SetActive(false);
         costText.text = roomType switch
         {
             0 => "Cost " + (GlobalVariables.CurrentHallBgUpgradeCost),
@@ -27,7 +30,8 @@ public class ButtonConstructionLevelIncrease : MonoBehaviour
             case 0: 
                 if (GlobalVariables.HallBgLevel == 2) 
                 { 
-                    _button.GetComponent<Image>().sprite = maxSprite; 
+                    _button.GetComponent<Image>().sprite = maxSprite;
+                    costText.text = "";
                     _button.interactable = false;
                 } 
                 break;
@@ -35,18 +39,12 @@ public class ButtonConstructionLevelIncrease : MonoBehaviour
                 if (GlobalVariables.BedroomBgLevel == 2) 
                 { 
                     _button.GetComponent<Image>().sprite = maxSprite; 
+                    costText.text = "";
                     _button.interactable = false;
                 } 
                 break;
         }
 
-        _button = GetComponent<Button>();
-        _button.onClick.AddListener(ConstructionLevelIncrease);
-    }
-
-    private void OnEnable()
-    {
-        notEnoughMoneyText.SetActive(false);
     }
 
     private void ConstructionLevelIncrease()  //0 - hall, 1 - bedroom
